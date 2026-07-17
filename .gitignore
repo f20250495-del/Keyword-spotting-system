@@ -1,3 +1,44 @@
+# ==========================================
+# 1. Project Specific Data (Heavy Audio Files)
+# ==========================================
+data/
+*.tar.gz
+*.zip
+*.7z
+
+# ==========================================
+# 2. Python & Environment Virtual Environments
+# ==========================================
+venv/
+.venv/
+env/
+bin/
+include/
+lib/
+share/
+pyvenv.cfg
+
+# Python cache
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ==========================================
+# 3. Jupyter Notebooks & IDEs
+# ==========================================
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# ==========================================
+# 4. System / OS Specific Files
+# ==========================================
+.DS_Store
+Thumbs.db
+
+###############################################################################################################
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

@@ -6,10 +6,10 @@ Classification of spoken commands into categories:yes/no/stop/go/unknown
 # Repository Structure:
 
   Keyword-spotting-system/
-├── .gitignore          # Excludes data/, venv/, and system artifacts
-├── download_data.py    # Fetches and extracts the Speech Commands dataset
-├── verification.py     # Verifies dataset integrity and file counts
-└── data/               # [LOCAL ONLY] Ignored by Git (Contains extracted audio)
+* .gitignore          Excludes data/, venv/, and system artifacts
+*  download_data.py   Fetches and extracts the Speech Commands dataset
+* verification.py     Verifies dataset integrity and file counts
+* data/               [LOCAL ONLY] Ignored by Git (Contains extracted audio)
 
 *  architecture strictly separates data acquisition logic from the core pipeline.
 

@@ -24,14 +24,17 @@ Classification of spoken commands into categories:yes/no/stop/go/unknown
 *Declare 2 lists:------>file_paths/labels
 -	self.file_paths:Stores filepaths of each audio_file as a string
 -	self.lables:Store class-intger to which audio is mapped
+
 *Maps class keyword with integer:
-	self.class_to_idx = {"yes": 0, "no": 1, "stop": 2, "go": 3, "unknown": 4}
+- self.class_to_idx = {"yes": 0, "no": 1, "stop": 2, "go": 3, "unknown": 4}
+	
 **Loop 1**
 *Maps folder name to class_integers using get():
-	label_idx = self.class_to_idx.get(category, self.class_to_idx["unknown"])
+- label_idx = self.class_to_idx.get(category, self.class_to_idx["unknown"])
+	
 **Loop 2**(2 statements)
 *Constructs file path by appending category path with filename
-	os.path.join(category_path, filename) 
+- os.path.join(category_path, filename) 
 *append file path and label to self.file_paths & self.labels respectively
 
 #DATA TRANSFORMATION:

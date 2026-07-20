@@ -19,6 +19,8 @@ Classification of spoken commands into categories:yes/no/stop/go/unknown
 * download_data.py handles the automated download and extraction
 * verification.py runs a programmatic check over the local audio clips so you never accidentally train a model on broken or missing files.
 
+#########################################################################################################
+
 #LOADING DATASET INTO PYTORCH:
 *Store Dataset path in raw string variable
 *Declare 2 lists:------>file_paths/labels
@@ -36,6 +38,8 @@ Classification of spoken commands into categories:yes/no/stop/go/unknown
 *Constructs file path by appending category path with filename
 - os.path.join(category_path, filename) 
 *append file path and label to self.file_paths & self.labels respectively
+
+###############################################################################################3
 
 #DATA TRANSFORMATION:
 
@@ -60,6 +64,24 @@ self.db_transform = torchaudio.transforms.AmplitudeToDB()
 
 -Pad sampled  numpy array with zeroes(if short)
 -Truncate if longer than 1s.
+
+#########################################################################################################
+
+#Design choices:
+
+*Tensor size: (1, 32, 51)
+*We require a lightweight model to classify clips into 5 distinct classes(yes,no,stop,go,unknown)
+
+*since we require minimum no of parameter and are using a relatively smaller data set to train and test(prevent overfitting on lightwt model), we like to keep the pixel dimensions minimum.
+
+*our audioclips have more of tonic components rathar than percussive components.(ex:No,go)
+We expect a spectrogram with horizontal bands(stable frequency over time) flanked by vertical bands(corresponding to beginning and ending of words)
+
+*keeping all these factors in mind, i decided to have larger no of time frames(512-hiphop time of 20 ms), with each time frame being relatively short in width(25-32 ms compared to std 40 ms)
+
+*Reason: Avoid smearing of vertical bands 
+
+
 
 
 

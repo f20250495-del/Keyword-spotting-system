@@ -20,14 +20,14 @@ class SpeechDataset(Dataset):
         self.db_transform = torchaudio.transforms.AmplitudeToDB()
         
         # --- THE PATH STORAGE LOOP ---
-        # We only loop to collect FILE PATH STRINGS, keeping RAM usage near zero.
+        # We only loop to collect FILE PATH STRINGS
         self.file_paths = []
         self.labels = []
         
-        # Target classes for your lightweight system
+        # Labelling classes
         self.class_to_idx = {"yes": 0, "no": 1, "stop": 2, "go": 3, "unknown": 4}
         
-        # Walk through your target folder structure
+        # skim through target folder
         for category in os.listdir(base_dir):
             category_path = os.path.join(base_dir, category)
             if os.path.isdir(category_path):

@@ -82,6 +82,50 @@ We expect a spectrogram with horizontal bands(stable frequency over time) flanke
 *Reason: Avoid smearing of vertical bands 
 
 
+Data split:Google speechset has data divided into 2 files:Training & validation
+
+*Files are divided in manner such that clips of a speaker are isolated to one file
+*This prevents memorisation of person ‘s vocal features:pitch, timbre, loudness,
+Rathar finds patterns corresponding to keywords.
+
+-How to ensure uniformity in size of training ,val,testing sets?(light architecture)
+
+#CNN architecture:
+
+5 layer network:small input volume, Simple network is enough to identify std keywords.
+
+**For schematic diag- Refer link provided below
+*
+
+Parameter count:
+Fc:15*16*5=1200+5=1205
+Conv 1::3*2*8=48+8=56
+Conv 2: 8*(2*2)*16=512+16=528
+Total:1789
+->Extremely memory and energy efficient:
+Optimised for Edge deployment &Embedded systems
+
+
+(16, 3, 5)
+
+
+Design choices:
+1.1st conv layer:Images contain mainly horizontal bands flanked by vertical bands.
+->Stride kept @ 2-features remain variant along horizontal axis
+->Dimension kept min:High resolution required to capture”Transition”.
+->Features : no of filters kept low - very simple edges(horizontal ,vertical lines)
+
+
+2.2nd conv layer:
+->Stride kept at1 : Patterns involving horizontal bands vary along length
+->others remain same
+
+#Final Results and Critical analysis(Refer kink provided below
+
+**https://docs.google.com/document/d/1MBiS5FOwzN77oCfM_pR-MBXG2Y8l8jNy3n1bXKzWoI4/edit?usp=sharing**(Link to doc containing **CNN arhitecture** &**Final results**)
+
+
+
 
 
 

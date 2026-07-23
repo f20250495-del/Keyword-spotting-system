@@ -99,14 +99,13 @@ Rathar finds patterns corresponding to keywords.
 
 Parameter count:
 Fc:15*16*5=1200+5=1205
-Conv 1::3*2*8=48+8=56
+Conv 1::(5*2)*8+8=88
 Conv 2: 8*(2*2)*16=512+16=528
-Total:1789
+Total:1821
 ->Extremely memory and energy efficient:
 Optimised for Edge deployment &Embedded systems
 
 
-(16, 3, 5)
 
 
 Design choices:
@@ -117,7 +116,7 @@ Design choices:
 
 
 2.2nd conv layer:
-->Stride kept at1 : Patterns involving horizontal bands vary along length
+->Stride kept at 2 : Patterns involving horizontal bands vary along length
 ->others remain same
 
 #Final Results and Critical analysis(Refer kink provided below)

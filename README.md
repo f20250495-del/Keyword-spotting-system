@@ -120,9 +120,9 @@ Design choices:
 ->Stride kept at1 : Patterns involving horizontal bands vary along length
 ->others remain same
 
-#Final Results and Critical analysis(Refer kink provided below
+#Final Results and Critical analysis(Refer kink provided below)
 
-**https://docs.google.com/document/d/1MBiS5FOwzN77oCfM_pR-MBXG2Y8l8jNy3n1bXKzWoI4/edit?usp=sharing**(Link to doc containing **CNN arhitecture** &**Final results**)
+**https://docs.google.com/document/d/1J23cXibFC6d8zlUYDbs5OOVYtCUUrIKjY00N2oFbqY4/edit?usp=sharing**
 
 
 
